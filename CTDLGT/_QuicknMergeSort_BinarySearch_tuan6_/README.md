@@ -22,3 +22,27 @@ I, Quick_Sort
   B6: A[] = { 13, 13, 23, 25, 36, 57, 59, 87, 89, 111, 121, 204 } (pivot = 59)
   B7: A[] = { 13, 13, 23, 25, 36, 57, 59, 87, 89, 111, 121, 204 } (pivot = 36)
   B8: Mang sau khi sap xep: 13 13 23 25 36 57 59 87 89 111 121 204
+
+II, Merge Sort
+ 1, Giải thuật
+
+ 2, Test case
+
+
+III, Binary Search
+1, Giải thuật
+- Cho mảng số nguyên A gồm n phần tử đã được sắp xếp theo thứ tự tăng dần và giá trị x cần tìm.
+- So sánh x và A[mid] (mid là vị trí của phần tử nằm ở giữa mảng)
+ + Nếu A[mid] = x: Tìm thấy x tại mid, kết thúc giải thuật.
+ + Nếu A[mid] > x: x nằm ở nửa bên trái mảng, ta tìm x từ đầu đến mid - 1.
+ + Nếu A[mid] < x: x nằm ở nửa bên phải mảng, ta tìm x từ mid + 1 đến cuối.
+
+2, Test case
+ - Input:
+   int A[] = { 13, 13, 23, 25, 36, 57, 59, 87, 89, 111, 121, 204 }
+   int x = 89 
+
+- Output: 
+ B1: A[start] = 0, A[end] = 11, mid = 5.
+ B2: A[start] = 6, A[end] = 11, mid = 8.
+ B3: x = A[8]

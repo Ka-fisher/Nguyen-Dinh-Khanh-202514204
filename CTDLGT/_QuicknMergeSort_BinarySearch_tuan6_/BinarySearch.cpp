@@ -2,13 +2,23 @@
 
 int BS(int A[], int end, int x) {
     int start = 0;
+    int step = 1;
 
     while (start <= end) {
         int k = start + (end - start) / 2;
 
-        if (A[k] == x) return k;
+        printf("B%i: A[start] = A[%i], A[end] = A[%i], mid = %i.\n",step, start, end, k);
+
+        if (A[k] == x) {
+            step++;
+            printf("B%i: x = A[%i]\n", step, k);
+            return k;
+        }
+
         else if (x < A[k]) end = k - 1;
         else start = k + 1;
+
+        step++;
     }
 
     return 0;
@@ -23,8 +33,7 @@ int main() {
     printf("Nhap so can tim: x = ");
     scanf("%i", &x);
 
-    int loc = BS(A, end, x);
-    printf("x = A[%i]", loc);
+    BS(A, end, x);
 
     return 0;
 }
