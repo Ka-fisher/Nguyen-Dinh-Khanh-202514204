@@ -36,7 +36,7 @@ void insertionSort(int A[], int n) {
 }
 
 int main() {
-    int A[] = { 23, 57, 13, 25, 121, 87, 36, 13, 204, 111, 89, 59 };
+    int A = { 13, 13, 23, 25, 36, 57, 59, 87, 89, 111, 121, 204 }
     int n = sizeof(A) / 4;
 
     printf("Ban dau: A ={");
