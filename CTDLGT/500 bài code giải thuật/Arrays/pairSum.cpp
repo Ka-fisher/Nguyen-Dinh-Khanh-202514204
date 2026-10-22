@@ -37,19 +37,30 @@ void QuickSort(int A[], int first, int last) {
 void pairSum(int A[], int sum, int n) {
     int i = 0;
     int j = n;
+    int B = 1;
 
     QuickSort(A, 0, n);
+    printf("Step %i: Sorted arrays: A = {",B++);
+    for (int i = 0; i < n - 1; i++) {
+            printf(" %i,", A[i]);
+        }
+    printf(" %i }\n", A[n - 1]);
 
     while (i < j) {
         if (A[i] + A[j] == sum) {
-            printf("Pair found: (A[%i] = %i, A[%i]) = %i)", i, A[i], j, A[j]);
+            printf("Step %i: Pair found: (A[%i] = %i, A[%i]) = %i)\n",B++, i, A[i], j, A[j]);
             return;
         }
-        else if (A[i] + A[j] < sum) i++;
-        else if (A[i] + A[j] > sum) j--;
-        
+        else if (A[i] + A[j] < sum) {
+            printf("Step %i: A[i] + A[j] = A[%i] + A[%i] = %i < %i\n",B++, i, j, A[i] + A[j], sum);
+            i++;
+        }
+        else if (A[i] + A[j] > sum) {
+            printf("Step %i: A[i] + A[j] = A[%i] + A[%i] = %i > %i\n",B++, i, j, A[i] + A[j], sum);
+            j--;
+        }
     }
-    printf("Pair not found");
+    printf("Step %i: Pair not found\n", B++);
     return;
 }
 int main() {
