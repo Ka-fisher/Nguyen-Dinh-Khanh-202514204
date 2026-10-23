@@ -6,7 +6,7 @@ void SortBAlinear(int A[], int n) {
 	for (int i = 0; i < n; i++) {
 		if (A[i] == 0) dem0++;
 		else if (A[i] != 1) {
-			printf("Eror input at A[%i]!\n", i);
+			printf("Error input at A[%i]!\n", i);
 			return;
 		}
 	}
@@ -32,6 +32,10 @@ int main() {
 	scanf("%i", &n);
 	if (n > N) {
 		printf("Please enter n less than %i", N);
+		return 0;
+	}
+	else if (n <= 0) {
+		printf("Please enter an positive number!");
 		return 0;
 	}
 
