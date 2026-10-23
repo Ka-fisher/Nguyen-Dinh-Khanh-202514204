@@ -1,24 +1,20 @@
 #include <stdio.h>
 #define N 100
 
-void SortBAlinear(int A, int n) {
+void SortBAlinear(int A[], int n) {
 	int dem0 = 0;
 	for (int i = 0; i < n; i++) {
 		if (A[i] == 0) dem0++;
-		else if (A[i] = !0 || A[i] = !1) {
-			printf("Eror input at A[%i]!", i);
+		else if (A[i] != 1) {
+			printf("Eror input at A[%i]!\n", i);
 			return;
 		}
 	}
 
-	if (dem0++ > 0) {
-		for (int i = 0; i < dem0; i++) {
-			A[i] = 0;
-			A[dem0 + i] = 1;
-		}
-	}
-	printf("Number of zeros: %i", dem0);
+		for (int i = 0; i < dem0; i++) A[i] = 0;
+		for (int i =  dem0; i < n; i++) A[i] = 1;
 
+	printf("Number of zeros: %i\n", dem0);
 	printf("Sorted binary array: A = {");
 	for (int i = 0; i < n - 1; i++) {
 		printf(" %i,", A[i]);
@@ -39,9 +35,9 @@ int main() {
 		return 0;
 	}
 
-	printf("Enter an Binary array:\n",);
+	printf("Enter an Binary array:\n");
 	for (int i = 0; i < n; i++) {
-		printf("A[%i] = ");
+		printf("A[%i] = ", i);
 		scanf("%i", &A[i]);
 	}
 
