@@ -34,14 +34,14 @@ int main() {
 		printf("A[%i] = ", i);
 		scanf("%i", &A[i]);
 		if (A[i] >= n || A[i] < 1) {
-			printf("The element must between 1 and %i", n);
+			printf("The element must between 0 and %i", n);
 			return 0;
 		}
 	}
 	
 
 	dup = findDup(A, n);
-	printf("THe duplicate element is %i.", dup);
+	printf("The duplicate element is %i.", dup);
 
 	return 0;
 }
