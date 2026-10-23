@@ -7,13 +7,18 @@ void swap(int* a, int* b) {
 	*b = temp;
 }
 
-void DutchFlag(int A[], int start, int pivot, int end) {
+void DutchFlag(int A[], int start, int pivot, int end, int n) {
 	int i = start;
 	while (i <= end) {
-		if (A[i] < pivot) swap(A[i++], A[start++]);
-		else if (A[i] > pivot) swap(A[i++], A[end--]);
+		if (A[i] < pivot) swap(&A[i++], &A[start++]);
+		else if (A[i] > pivot) swap(&A[i], &A[end--]);
 		else i++;
 	}
+	printf("Sorted Dutch Flag array: A = {");
+	for (int i = 0; i < n - 1; i++) {
+		printf(" %i,", A[i]);
+	}
+	printf(" %i }", A[n - 1]);
 }
 
 int main() {
@@ -40,7 +45,7 @@ int main() {
 		scanf("%i", &A[i]);
 	}
 
-	DutchFlag(A, 0, 1, n);
+	DutchFlag(A, 0, 1, n - 1, n);
 
 	return 0;
 }
