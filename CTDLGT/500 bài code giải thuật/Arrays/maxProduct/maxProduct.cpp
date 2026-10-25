@@ -37,20 +37,15 @@ void QuickSort(int A[], int first, int last) {
 
 void maxProduct(int A[], int n) {
     QuickSort(A, 0, n - 1);
-    mp = A[n - 1] * A[n - 2];
-    mn = A[0] * A[1];
-    if (mp > mn) {
-        printf("Max product is %d = %d * %d", mp, A[n - 1], A[n - 2]);
-        return;
+    int mp = A[n - 1] * A[n - 2];
+    int mn = A[0] * A[1];
+    if (mp > mn) printf("Max product is %i = %i * %i", mp, A[n - 1], A[n - 2]);
+
+    else if (mp == mn && (A[n - 1] != A[1] || A[n - 2] != A[0])) {
+        printf("Max product is %i = %i * %i = %i * %i", mn, A[n - 1], A[n - 2], A[0], A[1]);
     }
-    else if (mp = mn) {
-        printf("Max product is %d = %d * %d = %d * %d", mp, A[n - 1], A[n - 2], A[0], A[1]);
-        return;
-    }
-    else if (mp < mn) {
-        printf("Max product is %d = %d * %d", mp, A[0], A[1]);
-        return;
-    }
+
+    else printf("Max product is %i = %i * %i", mn, A[0], A[1]);
 }
 
 int main() {
@@ -63,8 +58,8 @@ int main() {
         printf("Please enter n less than %i", N);
         return 0;
     }
-    else if (n <= 0) {
-        printf("Please enter an positive number!");
+    else if (n < 2) {
+        printf("Please enter n > 1");
         return 0;
     }
 
