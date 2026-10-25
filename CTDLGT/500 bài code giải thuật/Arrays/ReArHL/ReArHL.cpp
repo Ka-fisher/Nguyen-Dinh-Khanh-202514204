@@ -45,7 +45,7 @@ void rearhl(int A[], int n) {
     }
     printf(" %i }\n", A[n - 1]);
 
-    for (int i = 1; i < n; i = i + 2) {
+    for (int i = 1; i + 1 < n; i += 2) {
         swap(&A[i], &A[i + 1]);
     }
     printf("Rearrange array: A = {");
