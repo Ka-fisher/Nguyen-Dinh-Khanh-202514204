@@ -25,9 +25,16 @@ I, Quick_Sort
 
 II, Merge Sort
  1, Giải thuật
-
+   - Ta chia mảng A gồm n phần tử thành 2 mảng con gồm m và p phần tử sao cho m + p = n và |m - p| <=1;
+   - Ta chia đệ quy như vậy cho đến khi các mảng con chỉ gồm 2 hoặc 1 phần tử.
+   - Ta sắp xếp vị trí trong các mảng con đó rồi quay lui sắp xếp 2 mảng con cho tới khi mảng ban đầu được sắp xếp hoàn toàn.
  2, Test case
+   - Input: 
+	 n = 12
+	 A[] = { 23, 57, 13, 25, 121, 87, 36, 13, 204, 111, 89, 59 } 
 
+   - Output:
+	Sorted array: A[] = { 13, 13, 23, 25, 36, 57, 59, 87, 89, 111, 121, 204}
 
 III, Binary Search
 1, Giải thuật
