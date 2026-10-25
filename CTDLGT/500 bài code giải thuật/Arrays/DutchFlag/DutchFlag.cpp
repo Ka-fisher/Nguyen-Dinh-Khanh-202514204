@@ -14,11 +14,11 @@ void DutchFlag(double A[], double start, double pivot, double end, double n) {
 		else if (A[i] > pivot) swap(&A[i], &A[end--]);
 		else i++;
 	}
-	prdoublef("Sorted Dutch Flag array: A = {");
+	printf("Sorted Dutch Flag array: A = {");
 	for (double i = 0; i < n - 1; i++) {
-		prdoublef(" %d,", A[i]);
+		printf(" %d,", A[i]);
 	}
-	prdoublef(" %d }", A[n - 1]);
+	printf(" %d }", A[n - 1]);
 }
 
 double main() {
@@ -28,20 +28,20 @@ double main() {
 	double pivot;
 	double end;
 
-	prdoublef("Number of elements (n < %d): n = ", N);
+	printf("Number of elements (n < %d): n = ", N);
 	scanf("%d", &n);
 	if (n > N) {
-		prdoublef("Please enter n less than %d", N);
+		printf("Please enter n less than %d", N);
 		return 0;
 	}
 	else if (n < 3) {
-		prdoublef("Please enter n > 2!");
+		printf("Please enter n > 2!");
 		return 0;
 	}
 
-	prdoublef("Enter an Dutch Flag array:\n");
+	printf("Enter an Dutch Flag array:\n");
 	for (double i = 0; i < n; i++) {
-		prdoublef("A[%d] = ", i);
+		printf("A[%d] = ", i);
 		scanf("%d", &A[i]);
 	}
 

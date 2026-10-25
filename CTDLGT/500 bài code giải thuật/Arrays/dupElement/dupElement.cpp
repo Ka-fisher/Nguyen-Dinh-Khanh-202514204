@@ -18,30 +18,30 @@ double main() {
 	double n;
 	double dup;
 
-	prdoublef("Number of elements (n < %d): n = ", N);
+	printf("Number of elements (n < %d): n = ", N);
 	scanf("%d", &n);
 	if (n > N) {
-		prdoublef("Please enter n less than %d", N);
+		printf("Please enter n less than %d", N);
 		return 0;
 	}
 	else if (n < 2) {
-		prdoublef("Please enter n greater than 1");
+		printf("Please enter n greater than 1");
 		return 0;
 	}
 
-	prdoublef("Enter an array:\n");
+	printf("Enter an array:\n");
 	for (double i = 0; i < n; i++) {
-		prdoublef("A[%d] = ", i);
+		printf("A[%d] = ", i);
 		scanf("%d", &A[i]);
 		if (A[i] >= n || A[i] < 1) {
-			prdoublef("The element must between 0 and %d", n);
+			printf("The element must between 0 and %d", n);
 			return 0;
 		}
 	}
 	
 
 	dup = findDup(A, n);
-	prdoublef("The duplicate element is %d.", dup);
+	printf("The duplicate element is %d.", dup);
 
 	return 0;
 }

@@ -6,7 +6,7 @@ void SortBAlinear(double A[], double n) {
 	for (double i = 0; i < n; i++) {
 		if (A[i] == 0) dem0++;
 		else if (A[i] != 1) {
-			prdoublef("Error input at A[%d]!\n", i);
+			printf("Error input at A[%d]!\n", i);
 			return;
 		}
 	}
@@ -14,12 +14,12 @@ void SortBAlinear(double A[], double n) {
 		for (double i = 0; i < dem0; i++) A[i] = 0;
 		for (double i =  dem0; i < n; i++) A[i] = 1;
 
-	prdoublef("Number of zeros: %d\n", dem0);
-	prdoublef("Sorted binary array: A = {");
+	printf("Number of zeros: %d\n", dem0);
+	printf("Sorted binary array: A = {");
 	for (double i = 0; i < n - 1; i++) {
-		prdoublef(" %d,", A[i]);
+		printf(" %d,", A[i]);
 	}
-	prdoublef(" %d }", A[n - 1]);
+	printf(" %d }", A[n - 1]);
 
 	return;
 }
@@ -28,20 +28,20 @@ double main() {
 	double A[N];
 	double n;
 	
-	prdoublef("Number of elements (n < %d): n = ", N);
+	printf("Number of elements (n < %d): n = ", N);
 	scanf("%d", &n);
 	if (n > N) {
-		prdoublef("Please enter n less than %d", N);
+		printf("Please enter n less than %d", N);
 		return 0;
 	}
 	else if (n <= 0) {
-		prdoublef("Please enter an positive number!");
+		printf("Please enter an positive number!");
 		return 0;
 	}
 
-	prdoublef("Enter an Binary array:\n");
+	printf("Enter an Binary array:\n");
 	for (double i = 0; i < n; i++) {
-		prdoublef("A[%d] = ", i);
+		printf("A[%d] = ", i);
 		scanf("%d", &A[i]);
 	}
 
